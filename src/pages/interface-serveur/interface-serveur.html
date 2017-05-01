@@ -1,0 +1,204 @@
+<ion-header class="server-ion-header" padding>    
+  <ion-navbar no-border-bottom hideBackButton="true">
+    
+    <ion-title class="server-ion-title" padding>
+      The best coffee
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="toggleMenu()">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar  no-border-top>
+    <ion-segment class="server-ion-segment segment-activated" padding [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+      <ion-segment-button value="Commandes">
+        Commandes
+      </ion-segment-button>
+      <ion-segment-button value="Historiques">
+        Histotiques
+      </ion-segment-button>
+      <ion-segment-button value="Statistiques">
+        Statistiques
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="right" [content]="mycontent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage()">
+        Paramètres
+      </button>
+      <button ion-item (click)="openPage()">
+       Déconnexion
+      </button>
+      <button  ion-item menuClose detail-none>
+      Fermer Menu
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+<ion-content class="server-ion-content" padding>
+  <ion-slides #mySlider (ionSlideDidChange)="onSlideChanged($event)">
+    <ion-slide *ngFor="let slide of slides">
+      
+     <div [ngSwitch]="selectedSegment">
+    <ion-list *ngSwitchCase="'Commandes'">
+       <ion-card>
+    <ion-card-header>
+      <ion-grid>
+  <ion-row>
+    <ion-col  width-20><div><button ion-button start color="secondary"><ion-icon name="checkmark-circle"></ion-icon></button></div></ion-col>
+    <ion-col  width-60><div>Commande 1</div></ion-col>
+    <ion-col  width-20><div><button ion-button color="danger"><ion-icon name="close-circle"></ion-icon></button></div></ion-col>
+</ion-row>
+</ion-grid>
+    </ion-card-header>
+    <br>
+    <ion-card-content>
+      <ion-list>
+    <ion-item>
+      2 x
+      <ion-icon name="cafe"></ion-icon>
+    </ion-item>
+    <ion-item>
+      1 x
+      <ion-icon name="beer"></ion-icon>
+    </ion-item>
+    <br>
+    <p>
+        <label>Date reçu : 12/03/2017 20:04</label>
+      </p>
+  </ion-list>
+    </ion-card-content>
+  </ion-card>
+   </ion-list>
+
+    <ion-list *ngSwitchCase="'Historiques'">
+      <ion-scroll scrollY="true" style="height: 450px">
+      <ion-card>
+    <ion-card-header>
+      Commande 1 
+    </ion-card-header>
+    <br>
+    <ion-card-content>
+      <ion-list>
+    <ion-item>
+      <ion-row center>
+    <ion-col><div>2 x</div></ion-col>
+    <ion-col><div><ion-thumbnail>
+          <img src="assets/images/logo-cafe.png">
+        </ion-thumbnail></div></ion-col>
+  </ion-row>
+    </ion-item>
+    <ion-item>
+      1 x
+      <ion-icon name="beer"></ion-icon>
+    </ion-item>
+    <br>
+    <p>
+        <label>Date reçu : 12/03/2017 20:04</label>
+      </p>
+      <p>
+        <label>Date validé : 12/03/2017 20:08</label>
+      </p>
+  </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Commande 2 
+    </ion-card-header>
+    <br>
+    <ion-card-content>
+      <ion-list>
+    <ion-item>
+      <ion-row center>
+    <ion-col><div>12 x</div></ion-col>
+    <ion-col><div><ion-thumbnail>
+          <img src="assets/images/logo-cafe.png">
+        </ion-thumbnail></div></ion-col>
+  </ion-row>
+    </ion-item>
+    <ion-item>
+      11 x
+      <ion-icon name="beer"></ion-icon>
+    </ion-item>
+    <br>
+    <p>
+        <label>Date reçu : 12/04/2017 20:04</label>
+      </p>
+      <p>
+        <label>Date validé : 12/04/2017 20:08</label>
+      </p>
+  </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Commande 3 
+    </ion-card-header>
+    <br>
+    <ion-card-content>
+      <ion-list>
+    <ion-item>
+      <ion-row center>
+    <ion-col><div>6 x</div></ion-col>
+    <ion-col><div><ion-thumbnail>
+          <img src="assets/images/logo-cafe.png">
+        </ion-thumbnail></div></ion-col>
+  </ion-row>
+    </ion-item>
+    <ion-item>
+      10 x
+      <ion-icon name="beer"></ion-icon>
+    </ion-item>
+    <br>
+    <p>
+        <label>Date reçu : 12/04/2017 21:04</label>
+      </p>
+      <p>
+        <label>Date validé : 12/04/2017 21:08</label>
+      </p>
+  </ion-list>
+    </ion-card-content>
+  </ion-card>
+      </ion-scroll>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Statistiques'">
+<ion-grid>
+  <ion-row>
+    <ion-col width-50>
+      <ion-scroll scrollY="true" style="height: 600px">
+      <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item }}
+    </button>
+  </ion-list>
+  </ion-scroll>
+      </ion-col>
+    <ion-col width-50>
+      <ion-row><ion-col><button ion-button color="danger"><ion-icon name="close-circle"></ion-icon></button></ion-col></ion-row>
+      <ion-row><ion-col><button ion-button color="dark"><ion-icon name="add-circle"></ion-icon></button></ion-col></ion-row>
+      <ion-row><ion-col><button ion-button color="dark"><ion-icon name="remove-circle"></ion-icon></button></ion-col></ion-row>
+      <ion-row><ion-col><button ion-button color="secondary"><ion-icon name="checkmark-circle"></ion-icon></button></ion-col></ion-row>
+    </ion-col>
+</ion-row>
+</ion-grid>
+    </ion-list>
+  </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

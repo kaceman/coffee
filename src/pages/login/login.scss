@@ -1,0 +1,76 @@
+//pw
+$alert-wp-background:#df8f46;
+$alert-wp-button-text-color:#ffffff;
+$alert-wp-button-background: #563722;
+//ios
+$alert-ios-background:#df8f46;
+$alert-ios-button-text-color:#ffffff;
+//android
+$alert-md-background-color:#df8f46;
+$alert-md-button-text-color:#ffffff;
+
+
+
+
+
+page-login {
+ 
+  .login-content {
+    background: #df8f46;
+ 
+    .logo-row {
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+    .logo-img {
+      border-radius: 50%;
+    }
+ 
+    .login-box {
+      background: #563722;
+      padding: 20px 20px 0px 20px;
+      margin-top: 30px;
+    }
+ 
+    ion-row {
+       align-items: center;
+       text-align: center;
+     }
+ 
+     ion-item {
+         border-radius: 30px !important;
+         padding-left: 30px !important;
+         font-size: 0.9em;
+         margin-bottom: 10px;
+         border: 1px solid #ffffff;
+         border-bottom: 0px !important;
+         box-shadow: none !important;
+     }
+ 
+     .signup-col {
+       margin: 0px 16px 0px 16px;
+       padding-bottom: 20px;
+     }
+ 
+     .item-inner {
+       border-bottom-color: #ffffff !important;
+       box-shadow: none !important;
+     }
+ 
+     .submit-btn {
+       background: #df8f46;
+       border-radius: 30px !important;
+       border: 1px solid #ffffff;
+     }
+ 
+     .register-btn {
+       text-decoration : underline;
+       color: #ffffff;
+       font-size: 0.8em;
+     }
+     
+
+  }
+
+ 
+}

@@ -1,0 +1,133 @@
+<ion-menu side="right" [content]="mycontent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage()">
+       Déconnexion
+      </button>
+      <button  ion-item menuClose detail-none>
+      Fermer Menu
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+<ion-content class="grid-basic-page" padding>
+  <ion-grid>
+  <ion-row>
+    <ion-col width-80><ion-scroll scrollY="true" style="height: 220px">caféScroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.Scroll is a non-flexboxed scroll area that can scroll horizontally or vertically. ion-Scroll Can be used in places where you may not need a full page scroller, but a highly customized one, such as image scubber or comment scroller.</ion-scroll></ion-col>
+    <ion-col width-20>
+      <ion-row><ion-col><button ion-button color="danger"><ion-icon name="close-circle"></ion-icon></button></ion-col></ion-row>
+      <ion-row><ion-col><button ion-button color="dark"><ion-icon name="add-circle"></ion-icon></button></ion-col></ion-row>
+      <ion-row><ion-col><button ion-button color="dark"><ion-icon name="remove-circle"></ion-icon></button></ion-col></ion-row>
+      <ion-row><ion-col><button ion-button color="secondary"><ion-icon name="checkmark-circle"></ion-icon></button></ion-col></ion-row>
+    </ion-col>
+</ion-row>
+</ion-grid>
+  
+   <ion-toolbar  no-border-top>
+    <ion-segment class="server-ion-segment segment-activated" padding [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+      <ion-segment-button value="café">
+        café
+      </ion-segment-button>
+      <ion-segment-button value="thé">
+        thé
+      </ion-segment-button>
+      <ion-segment-button value="soda">
+        soda
+      </ion-segment-button>
+      <ion-segment-button value="jus">
+        jus
+      </ion-segment-button>
+      <ion-segment-button value="déj">
+        déj
+      </ion-segment-button>
+      <ion-segment-button value="autre">
+        autre
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  
+<ion-slides #mySlider (ionSlideDidChange)="onSlideChanged($event)">
+    <ion-slide *ngFor="let slide of slides">
+      
+<div [ngSwitch]="selectedSegment">
+    
+    <ion-list *ngSwitchCase="'café'">
+      <ion-scroll scrollY="true" style="height: 300px">
+      <ion-item text-center class="server-ion-item icons-basic-page">
+  
+
+  <ion-row>
+    <ion-col><ion-icon class="clicked" name="happy" color="vibrant"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="people"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="person"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="contact"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="happy" color="vibrant"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="people"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="person"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="contact"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="apps"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="lock"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="key" color="bright"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="unlock"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="map" color="secondary"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="navigate"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="pin"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="locate"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="mic"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="musical-notes" color="vibrant"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="volume-up"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="microphone"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="cafe" color="bright"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="calculator"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="bus"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="wine" color="danger"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="camera"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="image" color="secondary"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="star" color="bright"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="pin"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="arrow-dropup-circle" color="vibrant"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="arrow-back"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="arrow-dropdown"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="arrow-forward"></ion-icon></ion-col>
+
+    <ion-col><ion-icon class="clicked" name="cloud"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="sunny" color="bright"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="umbrella"></ion-icon></ion-col>
+    <ion-col><ion-icon class="clicked" name="rainy" color="primary"></ion-icon></ion-col>
+  </ion-row>
+
+
+      </ion-item>
+      </ion-scroll>
+    </ion-list>
+    <ion-list *ngSwitchCase="'thé'">
+    </ion-list>
+    <ion-list *ngSwitchCase="'soda'">
+    </ion-list>
+    <ion-list *ngSwitchCase="'jus'">
+    </ion-list>
+    <ion-list *ngSwitchCase="'déj'">
+    </ion-list>
+    <ion-list *ngSwitchCase="'autre'">
+      
+    </ion-list>
+    
+  </div>
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>
